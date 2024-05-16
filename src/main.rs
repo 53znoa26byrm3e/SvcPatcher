@@ -23,5 +23,5 @@ fn main() {
 
     let hkcu = RegKey::predef(HKEY_LOCAL_MACHINE);
     let key = hkcu.open_subkey_with_flags(r"SYSTEM\ControlSet001\Control", KEY_SET_VALUE).unwrap();
-    key.set_value("SvcHostSplitThresholdInKB", &fram);
+    key.set_value("SvcHostSplitThresholdInKB", &fram).expect("Error while editing regedit key");
 }
